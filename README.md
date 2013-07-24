@@ -30,6 +30,7 @@ I use them to generate the soundboard file.
 		<clips>
 			<clip title="Example Clip #1" file="1.mp3"/>
 			<clip title="Example Clip #2" file="2.mp3"/>
+			<!-- other clips here -->
 		</clips>
 	</soundboard>
 
