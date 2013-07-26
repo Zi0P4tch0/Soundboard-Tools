@@ -5,7 +5,7 @@
 	Soundboard is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+	any later version.
 
 	Soundboard is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -23,7 +23,7 @@ I use them to generate the soundboard file.
 
 ###sbtool
 
-"sbtool" reads the soundboard details from a XML file, with this format:
+"sbtool" reads the soundboard details from a XML file, with this format, and generates a soundboard (.sb) file.
 
 	<soundboard name="Test Soundboard" version="1.0" author="Zi0P4tch0" date="24/7/2013">
 		<icon file="icon.png"/>

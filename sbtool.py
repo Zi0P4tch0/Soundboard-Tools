@@ -1,19 +1,21 @@
-#!/usr/bin/python
-
-#This file is part of Soundboard.
-#
-#Soundboard is free software: you can redistribute it and/or modify
-#it under the terms of the GNU General Public License as published by
-#the Free Software Foundation, either version 3 of the License, or
-#(at your option) any later version.
-#
-#Soundboard is distributed in the hope that it will be useful,
-#but WITHOUT ANY WARRANTY; without even the implied warranty of
-#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
-#
-#You should have received a copy of the GNU General Public License
-#along with Soundboard.  If not, see <http://www.gnu.org/licenses/>.
+##########################################################################
+#                                                                        #
+#  This file is part of Soundboard.                                      #
+#                                                                        #
+#  Soundboard is free software: you can redistribute it and/or modify    #
+#  it under the terms of the GNU General Public License as published by  #
+#  the Free Software Foundation, either version 3 of the License, or     #
+#  any later version.                                                    #
+#                                                                        #
+#  Soundboard is distributed in the hope that it will be useful,         #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+#  GNU General Public License for more details.                          #
+#                                                                        #
+#  You should have received a copy of the GNU General Public License     #
+#  along with Soundboard.  If not, see <http:#www.gnu.org/licenses/>.    #
+#                                                                        #
+##########################################################################
 
 VERSION='1.0'
 
@@ -80,7 +82,7 @@ if __name__ == '__main__':
     
     output.write(struct.pack('<I',len(clips)))
     
-    #duplicates handle
+    #Let's handle duplicates
     for i in range(0,len(clips)):
         
         dup = 0;
@@ -92,9 +94,7 @@ if __name__ == '__main__':
             if counter_clip == current_clip:
                 clips[j].attributes['title'] = current_clip + ' #' + str((dup+2))
                 dup = dup + 1 
-            
-    #end duplicates handle
-    
+                
     for clip in clips:
         
         clip_title = clip.attributes['title'].value.encode('utf-8')
