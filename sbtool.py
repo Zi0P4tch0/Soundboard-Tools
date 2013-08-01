@@ -19,7 +19,7 @@
 #                                                                        #
 ##########################################################################
 
-VERSION='1.1'
+VERSION='2.0'
 
 from xml.dom import minidom
 
@@ -49,9 +49,8 @@ if __name__ == '__main__':
     sb_name = sb.attributes['name'].value.encode('utf-8')
     sb_version = sb.attributes['version'].value.encode('utf-8')
     sb_author = sb.attributes['author'].value.encode('utf-8')
-    sb_date = sb.attributes['date'].value.encode('utf-8')
     
-    output_filename = sb_name.replace(' ','_')+'.sb'
+    output_filename = sb_name.replace(' ','_').replace('\'','%27')+'.sb'
     
     print 'Generating "' + output_filename + '"...'
     
@@ -63,8 +62,6 @@ if __name__ == '__main__':
     output.write(sb_version)
     output.write(struct.pack('<I',len(sb_author)))
     output.write(sb_author)
-    output.write(struct.pack('<I',len(sb_date)))
-    output.write(sb_date)
         
     icon = sb.getElementsByTagName('icon')[0].attributes['file'].value
     
@@ -118,3 +115,4 @@ if __name__ == '__main__':
         output.write(open(clip_file,'rb').read())
     
     output.close()
+    

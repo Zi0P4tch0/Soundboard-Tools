@@ -19,7 +19,7 @@
 #                                                                        #
 ##########################################################################
 
-VERSION='1.1'
+VERSION='2.0'
 
 import os
 import struct
@@ -47,13 +47,10 @@ if __name__ == '__main__':
     sb_version = str(sb.read(sb_version_len))
     sb_author_len = struct.unpack('<I',sb.read(4))[0]
     sb_author = str(sb.read(sb_author_len))
-    sb_date_len = struct.unpack('<I',sb.read(4))[0]
-    sb_date = str(sb.read(sb_date_len))
     
     print 'Soundboard: "' + sb_name + '".'
     print 'Version: "' + sb_version + '".'
     print 'Author: "' + sb_author + '".'
-    print 'Date: "' + sb_date + '".'
     
     sb_icon_size = struct.unpack('<I',sb.read(4))[0]
     
